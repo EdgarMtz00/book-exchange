@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@book-exchange/shared": ["libs/shared/src/index.ts"],
+      "@book-exchange/shared/dto": ["libs/shared/src/lib/dto/index.ts"],
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
