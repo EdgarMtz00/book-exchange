@@ -7,7 +7,6 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "composite": true,
     "declaration": true
   },
   "files": ["../../node_modules/@nrwl/react-native/typings/svg.d.ts"],
