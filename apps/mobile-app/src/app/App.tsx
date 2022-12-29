@@ -29,10 +29,6 @@ const AuthNavigator = () => (
       component={RegisterScreen}
       options={{
         title: 'Register', //Set Header Title
-        headerStyle: {
-          backgroundColor: '#307ecc', //Set Header color
-        },
-        headerTintColor: '#fff', //Set Header text color
         headerTitleStyle: {
           fontWeight: 'bold', //Set Header text style
         },
@@ -44,8 +40,8 @@ const AuthNavigator = () => (
 // Tab Navigator for the app screens
 const AppNavigator = () => (
   <Tab.Navigator>
-    <Tab.Screen name="Home" component={HomeScreen}/>
-    <Tab.Screen name="Settings" component={SettingsScreen}/>
+    <Tab.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
+    <Tab.Screen name="Settings" component={SettingsScreen} options={{headerShown: false}}/>
   </Tab.Navigator>
 )
 export const App = () => {
