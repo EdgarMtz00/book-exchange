@@ -17,7 +17,9 @@
     "paths": {
       "@book-exchange/shared": ["libs/shared/src/index.ts"],
       "@book-exchange/shared/dto": ["libs/shared/src/lib/dto/index.ts"],
-      "@book-exchange/shared/entities": ["libs/shared/src/lib/entities/index.ts"]
+      "@book-exchange/shared/entities": [
+        "libs/shared/src/lib/entities/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
