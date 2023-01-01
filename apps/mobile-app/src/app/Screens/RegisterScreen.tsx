@@ -10,6 +10,7 @@ import {
   View
 } from "react-native";
 import React, {createRef, RefObject, useState} from "react";
+import {Button} from '@book-exchange/ui-components';
 
 export default ({navigation}) => {
   const [userName, setUserName] = useState('');
@@ -138,12 +139,10 @@ export default ({navigation}) => {
               {errortext}
             </Text>
           ) : null}
-          <TouchableOpacity
-            style={styles.buttonStyle}
-            activeOpacity={0.5}
-            onPress={() => navigation.replace('App')}>
-            <Text style={styles.buttonTextStyle}>REGISTER</Text>
-          </TouchableOpacity>
+          <Button
+            text={'REGISTER'}
+            onPress={() => navigation.replace('App')}
+          />
         </KeyboardAvoidingView>
       </ScrollView>
     </View>

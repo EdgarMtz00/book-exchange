@@ -6,10 +6,10 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  TouchableOpacity,
   View
 } from "react-native";
 import React, {createRef, RefObject, useState} from "react";
+import {Button} from '@book-exchange/ui-components';
 
 export default ({navigation}) => {
   const [userEmail, setUserEmail] = useState('');
@@ -82,12 +82,10 @@ export default ({navigation}) => {
                 {errortext}
               </Text>
             ) : null}
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              activeOpacity={0.5}
-              onPress={() => navigation.replace('App')}>
-              <Text style={styles.buttonTextStyle}>LOGIN</Text>
-            </TouchableOpacity>
+            <Button
+              text={'LOGIN'}
+              onPress={() => navigation.replace('App')}
+            />
             <Text
               style={styles.registerTextStyle}
               onPress={() => navigation.navigate('RegisterScreen')}>
@@ -113,20 +111,6 @@ const styles = StyleSheet.create({
     marginLeft: 35,
     marginRight: 35,
     margin: 10,
-  },
-  buttonStyle: {
-    borderWidth: 0,
-    height: 40,
-    alignItems: 'center',
-    borderRadius: 30,
-    marginLeft: 35,
-    marginRight: 35,
-    marginTop: 20,
-    marginBottom: 25,
-  },
-  buttonTextStyle: {
-    paddingVertical: 10,
-    fontSize: 16,
   },
   inputStyle: {
     flex: 1,
