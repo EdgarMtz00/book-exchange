@@ -1,23 +1,20 @@
 import {
   Image,
-  Keyboard,
   KeyboardAvoidingView,
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
+  TextInput as NativeTextInput,
   View
 } from "react-native";
 import React, {createRef, RefObject, useState} from "react";
-import {Button} from '@book-exchange/ui-components';
+import {Button, TextInput} from '@book-exchange/ui-components';
 
 export default ({navigation}) => {
   const [userEmail, setUserEmail] = useState('');
-  const [userPassword, setUserPassword] = useState('');
-  const [loading, setLoading] = useState(false);
   const [errortext, setErrortext] = useState('');
 
-  const passwordInputRef: RefObject<TextInput> = createRef();
+  const passwordInputRef: RefObject<NativeTextInput> = createRef();
 
   return (
     <View style={styles.mainBody}>
@@ -43,38 +40,17 @@ export default ({navigation}) => {
             </View>
             <View style={styles.SectionStyle}>
               <TextInput
-                style={styles.inputStyle}
                 onChangeText={(UserEmail) =>
                   setUserEmail(UserEmail)
                 }
-                placeholder="Enter Email" //dummy@abc.com
-                placeholderTextColor="#8b9cb5"
-                autoCapitalize="none"
-                keyboardType="email-address"
-                returnKeyType="next"
-                onSubmitEditing={() =>
-                  passwordInputRef.current &&
-                  passwordInputRef.current.focus()
-                }
-                underlineColorAndroid="#f000"
-                blurOnSubmit={false}
+                placeholder="Enter Email"
               />
             </View>
             <View style={styles.SectionStyle}>
               <TextInput
-                style={styles.inputStyle}
-                onChangeText={(UserPassword) =>
-                  setUserPassword(UserPassword)
-                }
-                placeholder="Enter Password" //12345
-                placeholderTextColor="#8b9cb5"
-                keyboardType="default"
+                placeholder="Enter Password"
                 ref={passwordInputRef}
-                onSubmitEditing={Keyboard.dismiss}
-                blurOnSubmit={false}
                 secureTextEntry={true}
-                underlineColorAndroid="#f000"
-                returnKeyType="next"
               />
             </View>
             {errortext !== '' ? (
@@ -111,13 +87,6 @@ const styles = StyleSheet.create({
     marginLeft: 35,
     marginRight: 35,
     margin: 10,
-  },
-  inputStyle: {
-    flex: 1,
-    color: 'white',
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderWidth: 1,
   },
   registerTextStyle: {
     textAlign: 'center',
