@@ -9,10 +9,16 @@ export interface ButtonProps {
   textColor?: string,
 }
 
-export function Button(props: ButtonProps) {
+export function Button(
+  {
+    buttonColor = '#F1CB5F',
+    textColor = '#000',
+    text,
+    onPress
+  }: ButtonProps) {
   const styles  = StyleSheet.create({
     buttonStyle: {
-      backgroundColor: props.buttonColor ? props.buttonColor : '#F1CB5F',
+      backgroundColor: buttonColor,
       borderWidth: 0,
       height: 40,
       alignItems: 'center',
@@ -27,7 +33,7 @@ export function Button(props: ButtonProps) {
       elevation: 4, // Android
     },
     buttonTextStyle: {
-      color: props.textColor ? props.textColor : '#000',
+      color: textColor,
       paddingVertical: 10,
       fontSize: 16,
     }
@@ -37,8 +43,8 @@ export function Button(props: ButtonProps) {
     <TouchableOpacity
       style={styles.buttonStyle}
       activeOpacity={0.5}
-      onPress={props.onPress}>
-      <Text style={styles.buttonTextStyle}>{props.text}</Text>
+      onPress={onPress}>
+      <Text style={styles.buttonTextStyle}>{text}</Text>
     </TouchableOpacity>
   );
 }
