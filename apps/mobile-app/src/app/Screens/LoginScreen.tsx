@@ -38,30 +38,34 @@ export default ({navigation}) => {
                 }}
               />
             </View>
-            <View style={styles.SectionStyle}>
-              <TextInput
-                onChangeText={(UserEmail) =>
-                  setUserEmail(UserEmail)
-                }
-                placeholder="Enter Email"
-              />
-            </View>
-            <View style={styles.SectionStyle}>
-              <TextInput
-                placeholder="Enter Password"
-                ref={passwordInputRef}
-                secureTextEntry={true}
-              />
-            </View>
+
+            <TextInput
+              style={styles.SectionStyle}
+              onChangeText={(UserEmail) =>
+                setUserEmail(UserEmail)
+              }
+              placeholder="Enter Email"
+            />
+
+            <TextInput
+              style={styles.SectionStyle}
+              placeholder="Enter Password"
+              ref={passwordInputRef}
+              secureTextEntry={true}
+            />
+
             {errortext !== '' ? (
               <Text style={styles.errorTextStyle}>
                 {errortext}
               </Text>
             ) : null}
+
             <Button
+              style={styles.SectionStyle}
               text={'LOGIN'}
               onPress={() => navigation.replace('App')}
             />
+
             <Text
               style={styles.registerTextStyle}
               onPress={() => navigation.navigate('RegisterScreen')}>

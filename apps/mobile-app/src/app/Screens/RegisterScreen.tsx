@@ -27,6 +27,7 @@ export default ({navigation}) => {
           justifyContent: 'center',
           alignContent: 'center',
         }}>
+
         <View style={{alignItems: 'center'}}>
           <Image
             source={require('../Image/home-screen.png')}
@@ -38,49 +39,52 @@ export default ({navigation}) => {
             }}
           />
         </View>
+
         <KeyboardAvoidingView enabled>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              onChangeText={(UserName) => setUserName(UserName)}
-              placeholder="Enter Name"
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              onChangeText={(UserEmail) => setUserEmail(UserEmail)}
-              placeholder="Enter Email"
-              keyboardType="email-address"
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              onChangeText={(UserPassword) =>
-                setUserPassword(UserPassword)
-              }
-              placeholder="Enter Password"
-              secureTextEntry={true}
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              onChangeText={(UserAge) => setUserAge(UserAge)}
-              placeholder="Enter Age"
-              keyboardType="numeric"
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              placeholder="Enter Address"
-              autoCapitalize="sentences"
-              ref={addressInputRef}
-            />
-          </View>
+          <TextInput
+            style={styles.SectionStyle}
+            onChangeText={(UserName) => setUserName(UserName)}
+            placeholder="Enter Name"
+          />
+
+          <TextInput
+            style={styles.SectionStyle}
+            onChangeText={(UserEmail) => setUserEmail(UserEmail)}
+            placeholder="Enter Email"
+            keyboardType="email-address"
+          />
+
+          <TextInput
+            style={styles.SectionStyle}
+            onChangeText={(UserPassword) =>
+              setUserPassword(UserPassword)
+            }
+            placeholder="Enter Password"
+            secureTextEntry={true}
+          />
+
+          <TextInput
+            style={styles.SectionStyle}
+            onChangeText={(UserAge) => setUserAge(UserAge)}
+            placeholder="Enter Age"
+            keyboardType="numeric"
+          />
+
+          <TextInput
+            style={styles.SectionStyle}
+            placeholder="Enter Address"
+            autoCapitalize="sentences"
+            ref={addressInputRef}
+          />
+
           {errortext !== '' ? (
             <Text style={styles.errorTextStyle}>
               {errortext}
             </Text>
           ) : null}
+
           <Button
+            style={styles.SectionStyle}
             text={'REGISTER'}
             onPress={() => navigation.replace('App')}
           />
