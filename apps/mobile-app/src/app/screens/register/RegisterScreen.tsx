@@ -30,7 +30,7 @@ export default ({navigation}) => {
 
         <View style={{alignItems: 'center'}}>
           <Image
-            source={require('../Image/home-screen.png')}
+            source={require('../../images/home-screen.png')}
             style={{
               width: '50%',
               height: 100,

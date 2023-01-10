@@ -29,7 +29,7 @@ export default ({navigation}) => {
           <KeyboardAvoidingView enabled>
             <View style={{alignItems: 'center'}}>
               <Image
-                source={require('../Image/home-screen.png')}
+                source={require('../../images/home-screen.png')}
                 style={{
                   width: '50%',
                   height: 100,
@@ -65,12 +65,12 @@ export default ({navigation}) => {
               text={'LOGIN'}
               onPress={() => navigation.replace('App')}
             />
-
-            <Text
-              style={styles.registerTextStyle}
-              onPress={() => navigation.navigate('RegisterScreen')}>
-              New Here ? Register
-            </Text>
+            <Button
+              style={styles.SectionStyle}
+              text={'New Here? Register!'}
+              onPress={() => navigation.navigate('RegisterScreen')}
+              buttonColor={'white'}
+            />
           </KeyboardAvoidingView>
         </View>
       </ScrollView>

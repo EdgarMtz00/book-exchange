@@ -4,13 +4,13 @@ import React from 'react';
 import {NavigationContainer} from "@react-navigation/native";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
-import HomeScreen from "./Screens/HomeScreen";
-import SettingsScreen from "./Screens/SettingsScreen";
+import HomeScreen from "./screens/home/HomeScreen";
+import SettingsScreen from "./screens/settings/SettingsScreen";
 import {enableScreens} from "react-native-screens";
-import LoginScreen from "./Screens/LoginScreen";
-import RegisterScreen from "./Screens/RegisterScreen";
+import LoginScreen from "./screens/login/LoginScreen";
+import RegisterScreen from "./screens/register/RegisterScreen";
 import {createStackNavigator} from "@react-navigation/stack";
-import SplashScreen from "./Screens/SplashScreen";
+import SplashScreen from "./screens/splash/SplashScreen";
 
 const Tab = createBottomTabNavigator();
 
