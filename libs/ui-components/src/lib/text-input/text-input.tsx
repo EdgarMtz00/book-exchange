@@ -1,18 +1,18 @@
-import React from 'react';
+import React, {ForwardedRef} from 'react';
 
 import {Keyboard, StyleSheet, TextInput as NativeTextInput} from 'react-native';
 import HighContrastBorder from "../utils/high-contrast-border";
 
 type TextInputProps = React.ComponentPropsWithRef<typeof NativeTextInput>;
 
-export function TextInput(
+export const TextInput = React.forwardRef((
   {
     style,
     placeholder,
     placeholderTextColor = '#8b9cb5',
-    ref,
     onChangeText
-  }: TextInputProps) {
+  }: TextInputProps,
+  ref: ForwardedRef<NativeTextInput>) => {
 
   return (
     <HighContrastBorder style={style}>
@@ -31,7 +31,7 @@ export function TextInput(
       />
     </HighContrastBorder>
   );
-}
+});
 
 const styles = StyleSheet.create({
   inputStyle: {
