@@ -1,7 +1,7 @@
 import React, {ForwardedRef} from 'react';
 
 import {Keyboard, StyleSheet, TextInput as NativeTextInput} from 'react-native';
-import HighContrastBorder from "../utils/high-contrast-border";
+import HighContrastBorder from "../high-contrast-border/high-contrast-border";
 
 type TextInputProps = React.ComponentPropsWithRef<typeof NativeTextInput>;
 
@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
   inputStyle: {
     width: '100%',
     height: '100%',
-    borderWidth: 1
+    borderWidth: 1,
+    paddingLeft: 5
   }
 })
 

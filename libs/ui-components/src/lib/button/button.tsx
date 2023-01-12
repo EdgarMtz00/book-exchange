@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {GestureResponderEvent, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import HighContrastBorder from "../utils/high-contrast-border";
+import HighContrastBorder from "../high-contrast-border/high-contrast-border";
 
 export type ButtonProps = React.ComponentPropsWithRef<typeof View> & {
   text: string,
