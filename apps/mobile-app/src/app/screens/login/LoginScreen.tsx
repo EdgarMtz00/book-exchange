@@ -45,6 +45,7 @@ export default ({navigation}) => {
                 setUserEmail(UserEmail)
               }
               placeholder="Enter Email"
+              label={"Your Email"}
             />
 
             <TextInput
@@ -52,6 +53,7 @@ export default ({navigation}) => {
               placeholder="Enter Password"
               ref={passwordInputRef}
               secureTextEntry={true}
+              label={"Password"}
             />
 
             {errortext !== '' ? (
